@@ -1,0 +1,172 @@
+BTC,('You selected :', 'BTC'),The Price is : $42000,('Time:', '2026 19 Apr 23:04:53')
+ETH ('You selected :', 'ETH') The Price is : $42000 ('Time:', '2026 19 Apr 23:05:22')
+Sol ('You selected :', 'Sol') The Price is : $42000 ('Time:', '2026 19 Apr 23:07:44')
+AVA ('You selected :', 'AVA') The Price is : $42000 ('Time:', '2026 20 Apr 07:33:10')
+('You selected :', 'RRR') | The Price is : $42000 | ('Time:', '2026 20 Apr 07:35:53')
+HHH | ('You selected :', 'HHH') | The Price is : $42000 | ('Time:', '2026 20 Apr 07:36:23')
+Hoo | ('You selected :', 'Hoo') | The Price is : $42000 | ('Time:', '2026 20 Apr 07:38:07')
+GGG | You selected : GGG | The Price is : $42000 | ('Time:', '2026 20 Apr 07:38:42')
+Ethereum | You selected : Ethereum | The Price is : $42000 | Time: 2026 20 Apr 10:56:17
+HHH 
+ You selected : HHH 
+ The Price is : $42000 
+ Time: 2026 20 Apr 10:56:52
+JJJ 
+ You selected : JJJ 
+ The Price is : $42000 
+ Time: 2026 20 Apr 10:57:06
+
+SSS 
+ You selected : SSS 
+ The Price is : $42000 
+ Time: 2026 20 Apr 10:57:28
+
+HHH 
+ None 
+ None 
+ None
+
+LLL 
+ You selected : LLL 
+ The Price is : $42000 
+ Time: 2026 20 Apr 11:08:02
+
+UUU 
+ You selected : UUU 
+ The Price is : $42000 
+ Time: 2026 20 Apr 11:08:36
+
+OLOL 
+ You selected : OLOL 
+ The Price is : OLOL 
+ Time: 2026 20 Apr 11:26:43
+
+SOL 
+ You selected : SOL 
+ The Price is : $2300  
+ Time: 2026 20 Apr 11:29:26
+
+BTC 
+ You selected : BTC 
+ The Price is : $2300  
+ Time: 2026 20 Apr 11:29:54
+
+SOL 
+ You selected : SOL 
+ The Price is : $75000$2300$85$999  
+ Time: 2026 20 Apr 11:35:16
+
+SOL 
+ You selected : SOL 
+ The Price is : {'ETH': 2300, 'BTC': 75000, 'SOL': 85}  
+ Time: 2026 20 Apr 11:42:33
+
+BTC 
+ You selected : BTC 
+ The Price is : {'ETH': 2300, 'BTC': 75000, 'SOL': 85}  
+ Time: 2026 20 Apr 11:43:41
+
+SOL 
+ You selected : SOL 
+ The Price is : 85  
+ Time: 2026 20 Apr 11:49:54
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000  
+ Time: 2026 20 Apr 11:50:09
+
+ETH 
+ You selected : ETH 
+ The Price is : 2300  
+ Time: 2026 20 Apr 11:50:21
+
+ETH 
+ You selected : ETH 
+ The Price is : 2300  
+ Time: 2026 20 Apr 11:52:15
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000  
+ Time: 2026 20 Apr 11:52:22
+
+SOL 
+ You selected : SOL 
+ The Price is : 85  
+ Time: 2026 20 Apr 11:52:28
+
+SOL 
+ You selected : SOL 
+ The Price is : 85 
+ Time: 2026 20 Apr 11:55:54
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 20 Apr 11:56:02
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 19:24:00
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 19:39:05
+
+SOL 
+ You selected : SOL 
+ The Price is : 85 
+ Time: 2026 21 Apr 19:39:14
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 19:39:34
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 19:41:53
+
+ETH 
+ You selected : ETH 
+ The Price is : 2300 
+ Time: 2026 21 Apr 19:42:01
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 19:44:27
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 19:51:14
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 20:02:30
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 20:03:54
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 20:04:02
+
+BTC 
+ You selected : BTC 
+ The Price is : 75000 
+ Time: 2026 21 Apr 20:04:19
+
+ETH 
+ You selected : ETH 
+ The Price is : {'usd': 2300} 
+ Time: 2026 21 Apr 20:17:17
