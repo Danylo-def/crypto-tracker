@@ -6,7 +6,6 @@
 import requests 
 from datetime import datetime, timedelta #connect datetime
 
-file = open('Crypto tracker/History.txt', 'a')# file open
 
 while True: #loop to not rerun code
 
@@ -21,12 +20,28 @@ while True: #loop to not rerun code
 "ETH": "ethereum",
 "BTC": "bitcoin",
 "SOL": "solana",
-"ADA": "cardano"
+"ADA": "cardano",
+"XRP": "ripple",
+"BNB": "binancecoin",
+"TRX": "tron",
+"DOGE": "dogecoin",
+"BCH": "bitcoin-cash",
+"LINK": "chainlink",
+"XLM": "stellar",
+"LTC": "litecoin",
+"AVAX": "avalanche",
+"HBAR": "hedera",
+"SUI": "sui",
+"UNI": "uniswap",
+"ARB": "arbitrum",
+"APT": "aptos",
 }
+    
+
 #condition to check, if no coin in dic.
     if ques not in coin_map:
         print("Coin not Found")
-        exit()
+        continue
 
     coin_id = coin_map[ques]
 
@@ -35,15 +50,22 @@ while True: #loop to not rerun code
     response = requests.get(url)#import requests from coingecko
     data = response.json()# form it to python 
 
+#condition if API not give the programm will not crash
+    try:
+        price = data[coin_id]["usd"]
+    except KeyError:
+        print("API error, try again...")
+        continue
+
+
 #File outcome
     selected_coin = (f"You selected : {ques}") 
-    price_value = f"{ques} Price: {data[coin_id]['usd']} USD"
+    price_value = f"{ques} Price: {price} USD"
     time_shown = (f"Time: {datetime.now().strftime('%Y %d %b %H:%M:%S')}")
 
 #Output variables in file
     whole = (f"\n{ques} \n {selected_coin} \n {price_value} \n {time_shown}")
     print(whole)
-    file.write(whole + '\n')
 
-
-    file.close()# close file 
+    with open('Crypto tracker/History.txt', 'a') as file:
+        file.write(whole + '\n')
