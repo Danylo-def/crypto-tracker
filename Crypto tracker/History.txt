@@ -170,3 +170,38 @@ ETH
  You selected : ETH 
  The Price is : {'usd': 2300} 
  Time: 2026 21 Apr 20:17:17
+
+BTC 
+ You selected : BTC 
+ 78017 
+ Time: 2026 26 Apr 13:41:52
+
+ETH 
+ You selected : ETH 
+ 2333.18 
+ Time: 2026 26 Apr 13:42:33
+
+SOL 
+ You selected : SOL 
+ SOL's Price: {'usd': 86.5} usd 
+ Time: 2026 26 Apr 13:48:09
+
+ETH 
+ You selected : ETH 
+ ETH's Price: {'usd': 2332.77}  
+ Time: 2026 26 Apr 13:49:29
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2332.46 USD 
+ Time: 2026 26 Apr 13:51:06
+
+ADA 
+ You selected : ADA 
+ ADA Price: 0.252637 USD 
+ Time: 2026 26 Apr 13:53:50
+
+SOL 
+ You selected : SOL 
+ SOL Price: 86.46 USD 
+ Time: 2026 26 Apr 13:59:13
