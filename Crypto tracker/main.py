@@ -3,17 +3,17 @@
 #python 3.13.3
 #pip install requests
 
-import requests
+import requests 
 from datetime import datetime, timedelta #connect datetime
 
 file = open('Crypto tracker/History.txt', 'a')# file open
 
-while True:
+while True: #loop to not rerun code
 
 # console input
     ques = input ("What coin you want to check? :  ").upper()#input with upper method 
 
-    if ques == "EXIT":
+    if ques == "EXIT":#condition if 'exit' --> stop code
         break
 
 #dictionary
@@ -30,10 +30,10 @@ while True:
 
     coin_id = coin_map[ques]
 
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd"
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd"#url to choose directly what coin I chose. 
 
-    response = requests.get(url)
-    data = response.json()
+    response = requests.get(url)#import requests from coingecko
+    data = response.json()# form it to python 
 
 #File outcome
     selected_coin = (f"You selected : {ques}") 
