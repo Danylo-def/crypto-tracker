@@ -13,3 +13,43 @@ APT
  You selected : APT 
  APT Price: 0.987435 USD 
  Time: 2026 26 Apr 23:08:02
+
+BCH 
+ You selected : BCH 
+ BCH Price: 445.42 USD 
+ Time: 2026 03 May 14:45:58
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2320.61 USD 
+ Time: 2026 03 May 14:46:05
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2322.36 USD 
+ Time: 2026 03 May 14:53:38
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2331.0 USD 
+ Time: 2026 03 May 20:58:52
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2331.09 USD 
+ Time: 2026 03 May 20:59:08
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2331.09 USD 
+ Time: 2026 03 May 20:59:23
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2330.72 USD 
+ Time: 2026 03 May 21:25:16
+
+ETH 
+ You selected : ETH 
+ ETH Price: 2330.72 USD 
+ Time: 2026 03 May 21:25:31

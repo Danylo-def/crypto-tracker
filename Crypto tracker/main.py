@@ -2,9 +2,13 @@
 
 #python 3.13.3
 #pip install requests
+#Will upgrade = w\i
 
 import requests 
 from datetime import datetime, timedelta #connect datetime
+import time 
+import os 
+
 
 
 while True: #loop to not rerun code
@@ -45,27 +49,35 @@ while True: #loop to not rerun code
 
     coin_id = coin_map[ques]
 
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd"#url to choose directly what coin I chose. 
+    while True:#new loop that provide ability to introduce live-terminal. w\i
+        url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd"#url to choose directly what coin I chose. 
 
-    response = requests.get(url)#import requests from coingecko
-    data = response.json()# form it to python 
+        response = requests.get(url)#import requests from coingecko
+        data = response.json()# form it to python 
 
 #condition if API not give the programm will not crash
-    try:
-        price = data[coin_id]["usd"]
-    except KeyError:
-        print("API error, try again...")
-        continue
+        try:
+            price = data[coin_id]["usd"]
+        except KeyError:
+            print("API error, try again...")
+            continue
 
 
 #File outcome
-    selected_coin = (f"You selected : {ques}") 
-    price_value = f"{ques} Price: {price} USD"
-    time_shown = (f"Time: {datetime.now().strftime('%Y %d %b %H:%M:%S')}")
+        selected_coin = (f"You selected : {ques}") 
+        price_value = f"{ques} Price: {price} USD"
+        time_shown = (f"Time: {datetime.now().strftime('%Y %d %b %H:%M:%S')}")
 
 #Output variables in file
-    whole = (f"\n{ques} \n {selected_coin} \n {price_value} \n {time_shown}")
-    print(whole)
+        whole = (f"\n{ques} \n {selected_coin} \n {price_value} \n {time_shown}")
 
-    with open('Crypto tracker/History.txt', 'a') as file:
-        file.write(whole + '\n')
+    #creating live-terminal
+        os.system('cls' if os.name == 'nt'else 'clear')# help to get it what u use (windows,mac or linux)
+        print(whole)
+        print("\n Type CTRL+C to stop")# w\i
+        
+        
+        with open('Crypto tracker/History.txt', 'a') as file:
+            file.write(whole + '\n')
+
+        time.sleep(15)# it will spawn new block after 15sec. w\i
