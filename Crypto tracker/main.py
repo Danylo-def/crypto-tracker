@@ -10,6 +10,9 @@ import time
 import os 
 
 
+def console_input():
+    ques = input ("What coin you want to check? :  ").upper()#input with upper method 
+
 
 while True: #loop to not rerun code
 
