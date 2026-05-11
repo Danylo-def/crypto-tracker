@@ -51,8 +51,8 @@ def user_input():
     return  input("What coin you want to check? :  ").upper()
 
 #check coin
-def check_coin():
-    if user_input not in coin_map:
+def check_coin(ques):
+    if ques not in coin_map:
         print("Coin not Found")
         return False
     return True
@@ -71,6 +71,7 @@ def extract_price(coin_id,data):
     except KeyError:
         print("API error, try again...")
         return None
+    return price
 
 #clear terminal 
 def clear_console():
@@ -97,10 +98,41 @@ def build_terminal(ques,price):
         f"{'Type CTRL+C to stop'} \n"
         f"{"="*30}"
     )
+    return whole,whole_2
 
 #save history
 def save_history(whole,whole_2):
     with open('Crypto tracker/History.txt', 'a') as file:
         file.write(f"{whole}\n {whole_2} \n")
 
-#
+#live tracking 
+def start_live_tracking(coin_id,ques):
+    while True:
+        data = api_get(coin_id)
+        price = extract_price(coin_id,data)
+        if price is None:
+            continue
+
+        whole , whole_2 = build_terminal(ques,price)
+        clear_console()
+        print(f"{whole}\n")
+        print(whole_2)
+        save_history(whole,whole_2)
+        time.sleep(15)
+
+#main 
+def main():
+    while True:
+        ques = user_input()
+        if ques == "EXIT":
+            break
+
+        if not check_coin(ques):
+            continue
+
+        coin_id = coin_map[ques]
+        start_live_tracking (coin_id, ques)
+main()
+
+
+

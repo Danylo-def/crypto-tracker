@@ -1,5 +1,6 @@
 
 
+
 #python 3.13.3
 #pip install requests
 #Will upgrade = w\i
@@ -9,21 +10,22 @@ from datetime import datetime, timedelta #connect datetime
 import time 
 import os 
 
+###architecture :
+# dictionary
+## user input
+# check coin
+# api request
+# extract price (if coin typed incorrect)
+# clear terminal
+# build terminal ui
+# save history
+# live tracking
+# main
 
-def console_input():
-    ques = input ("What coin you want to check? :  ").upper()#input with upper method 
-
-
-while True: #loop to not rerun code
-
-# console input
-    ques = input ("What coin you want to check? :  ").upper()#input with upper method 
-
-    if ques == "EXIT":#condition if 'exit' --> stop code
-        break
 
 #dictionary
-    coin_map = {
+
+coin_map = {
 "ETH": "ethereum",
 "BTC": "bitcoin",
 "SOL": "solana",
@@ -43,45 +45,94 @@ while True: #loop to not rerun code
 "ARB": "arbitrum",
 "APT": "aptos",
 }
-    
 
-#condition to check, if no coin in dic.
+#user input
+def user_input():
+    return  input("What coin you want to check? :  ").upper()
+
+#check coin
+def check_coin(ques):
     if ques not in coin_map:
         print("Coin not Found")
-        continue
+        return False
+    return True
 
-    coin_id = coin_map[ques]
+#API request
+def api_get(coin_id):
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd"
+    response = requests.get(url)
+    data = response.json()
+    return data
 
-    while True:#new loop that provide ability to introduce live-terminal. w\i
-        url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd"#url to choose directly what coin I chose. 
+#extract price
+def extract_price(coin_id,data):
+    try:
+        price = data[coin_id]["usd"]
+    except KeyError:
+        print("API error, try again...")
+        return None
+    return price
 
-        response = requests.get(url)#import requests from coingecko
-        data = response.json()# form it to python 
+#clear terminal 
+def clear_console():
+    os.system('cls' if os.name == 'nt'else 'clear')
 
-#condition if API not give the programm will not crash
-        try:
-            price = data[coin_id]["usd"]
-        except KeyError:
-            print("API error, try again...")
+#build terminal components
+def build_terminal(ques,price):
+    name_project = ("\t CRYPTO TRACKER").upper()
+    selected_coin = (f"Coin  : {ques}") 
+    price_value = f"Price : {price} USD"
+    time_shown = (f"Time  : {datetime.now().strftime('%Y %d %b %H:%M:%S')}")
+
+    whole = (
+        f"{"="*30}\n"
+        f" {name_project} \n"
+        f"{"="* 30} \n"
+        f"{selected_coin} \n"
+        f"{price_value} \n"
+        f"{time_shown}"
+        )
+    
+    whole_2 = (
+        f"{"-"* 30}\n"
+        f"{'Type CTRL+C to stop'} \n"
+        f"{"="*30}"
+    )
+    return whole,whole_2
+
+#save history
+def save_history(whole,whole_2):
+    with open('Crypto tracker/History.txt', 'a') as file:
+        file.write(f"{whole}\n {whole_2} \n")
+
+#live tracking 
+def start_live_tracking(coin_id,ques):
+    while True:
+        data = api_get(coin_id)
+        price = extract_price(coin_id,data)
+        if price is None:
             continue
 
-
-#File outcome
-        name_project = ("\t CRYPTO TRACKER").upper()
-        selected_coin = (f"Coin  : {ques}") 
-        price_value = f"Price : {price} USD"
-        time_shown = (f"Time  : {datetime.now().strftime('%Y %d %b %H:%M:%S')}")
-
-#Output variables in file
-        whole = (f"{"="* 30} \n {name_project} \n {"="* 30} \n\n {selected_coin} \n {price_value} \n {time_shown}")
-
-    #creating live-terminal
-        os.system('cls' if os.name == 'nt'else 'clear')# help to get it what u use (windows,mac or linux)
+        whole , whole_2 = build_terminal(ques,price)
+        clear_console()
         print(f"{whole}\n")
-        whole_2 = (f"{"-"* 30}\n {'Type CTRL+C to stop'} \n {"="*30}")
         print(whole_2)
-        #write in file
-        with open('Crypto tracker/History.txt', 'a') as file:
-            file.write(f"{whole}\n {whole_2} \n")
+        save_history(whole,whole_2)
+        time.sleep(15)
 
-        time.sleep(15)# it will spawn new block after 15sec. w\i
+#main 
+def main():
+    while True:
+        ques = user_input()
+        if ques == "EXIT":
+            break
+
+        if not check_coin(ques):
+            continue
+
+        coin_id = coin_map[ques]
+        start_live_tracking (coin_id, ques)
+main()
+
+
+
